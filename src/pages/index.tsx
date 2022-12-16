@@ -1,5 +1,7 @@
-export default function Home() {
+import Home from "./home";
+
+export default function MyApp() {
   return (
-    <h1>Pokemon Next</h1>
+    <Home />
   )
 }
