@@ -19,9 +19,17 @@ export const Header = styled.div`
   gap: 0.5rem;
 `;
 
-export const Title = styled.text``;
+export const Title = styled.text`
+  font-weight: bold;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
 
 export const Link = styled.div`
+  font-weight: bold;
   display: flex;
   gap: 0.5rem;
 
