@@ -9,13 +9,12 @@ interface IpropsLayout {
 
 export function Layout({ children }: IpropsLayout) {
   return (
-    <ContainerGlobal>
-      <Head>
-        <title>Pokemon Next</title>
-      </Head>
+    <>
       <Navbar />
-      <main style={{ minHeight: "70vh" }}>{children}</main>
+      <ContainerGlobal>
+        <main style={{ minHeight: "70vh" }}>{children}</main>
+      </ContainerGlobal>
       <Footer />
-    </ContainerGlobal>
+    </>
   );
 }
