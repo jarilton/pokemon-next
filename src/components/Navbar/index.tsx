@@ -12,7 +12,7 @@ export function Navbar() {
 
       <S.Link>
         <S.LinkWrapper>
-          <Link href="/" style={{ textDecoration: "none", color: "white" }}>
+          <Link href="/home" style={{ textDecoration: "none", color: "white" }}>
             Home
           </Link>
         </S.LinkWrapper>
