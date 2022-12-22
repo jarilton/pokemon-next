@@ -12,8 +12,6 @@ export default function Home() {
       const maxPokemons = 251;
       const { data } = await api.get(`/pokemon/?limit=${maxPokemons}`);
 
-      console.log("Dados da api", data);
-
       //add pokemon index
       data?.results?.forEach((item: any, index: any) => {
         item.id = index + 1;
@@ -24,8 +22,6 @@ export default function Home() {
       console.log(error);
     }
   };
-
-  console.log("Estado", listPokemons);
 
   useEffect(() => {
     fetchPokemons();
