@@ -1,11 +1,11 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import api from "../services/api";
 
 import * as S from "../styles/pages/home";
 
-
 export default function Home() {
-  const [pokemons, setPokemons] = useState([] as any[]);
+  const [listPokemons, setListPokemons] = useState([] as any[]);
 
   const fetchPokemons = async () => {
     try {
@@ -19,13 +19,13 @@ export default function Home() {
         item.id = index + 1;
       });
 
-      setPokemons(data?.results);
+      setListPokemons(data?.results);
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log("Estado", pokemons);
+  console.log("Estado", listPokemons);
 
   useEffect(() => {
     fetchPokemons();
@@ -33,10 +33,16 @@ export default function Home() {
 
   return (
     <S.Container>
-      <S.Title>POKENEXT</S.Title>
+      <S.TitleContainer>
+        <S.Title>
+          Poke<S.DestakTitle>next</S.DestakTitle>
+        </S.Title>
+        <Image src="/pokeball.png" width="50" height="50" alt="Pokeball" />
+      </S.TitleContainer>
+
       <S.ListItems>
-        {pokemons?.map((item, index) => (
-          <S.List key={index}>{item.name}</S.List>
+        {listPokemons?.map((item, index) => (
+          <S.ListInfo key={index}>{item.name}</S.ListInfo>
         ))}
       </S.ListItems>
     </S.Container>
