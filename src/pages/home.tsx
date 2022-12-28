@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Card } from "../components/Card";
 import api from "../services/api";
 
 import * as S from "../styles/pages/home";
@@ -37,8 +38,9 @@ export default function Home() {
       </S.TitleContainer>
 
       <S.ListItems>
-        {listPokemons?.map((item, index) => (
-          <S.ListInfo key={index}>{item.name}</S.ListInfo>
+        {listPokemons?.map((pokemon) => (
+          <Card key={pokemon.id} pokemon={pokemon}/>
+          //<S.ListInfo key={index}>{item.name}</S.ListInfo>
         ))}
       </S.ListItems>
     </S.Container>
